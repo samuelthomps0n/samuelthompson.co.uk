@@ -1,0 +1,25 @@
+{
+  "name": "samuelthompson.react",
+  "version": "0.1.0",
+  "private": true,
+  "homepage" : "http://samuelthompson.co.uk/beta",
+  "dependencies": {
+    "postcss": "^6.0.14",
+    "postcss-cli": "^4.1.1",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-import": "^11.0.0",
+    "postcss-nested": "^3.0.0",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-progressive-image-loading": "^3.0.3",
+    "react-scripts": "1.1.4",
+    "reset-css": "^2.2.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "css": "node_modules/.bin/postcss src/css/index.css --config postcss.config.js -o src/index.css"
+  }
+}

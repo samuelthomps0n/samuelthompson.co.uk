@@ -1,0 +1,16 @@
+:root {
+	--identityColor: #252525;
+	--identityFont: Montserrat;
+}
+
+.identity {
+	font-family: var(--identityFont), sans-serif;
+	color: var(--identityColor);
+	font-size: 22px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+
+	&--split {
+		max-width: 6ch;
+	}
+}

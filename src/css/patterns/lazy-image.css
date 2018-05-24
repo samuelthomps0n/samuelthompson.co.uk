@@ -1,0 +1,10 @@
+.lazy-image {
+	filter: blur(50px);
+	transform: scale(1); /* this is needed so Safari keeps sharp edges */
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: block;
+	opacity: 0.75;
+	overflow: hidden;
+}

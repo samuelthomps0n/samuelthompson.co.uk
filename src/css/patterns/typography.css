@@ -1,0 +1,72 @@
+:root {
+	--bodyFont: 'PT Sans';
+	--headingFont: 'PT Sans';
+	--baseTextColor: #242424;
+	--linkColor: #f1592a;
+	--linkHoverColor: #f1592a;
+
+	--transitionAnimation: cubic-bezier(0.465, 0.183, 0.153, 0.946);
+}
+
+.heading {
+	margin-bottom: 1rem;
+	font-family: var(--headingFont), serif;
+	line-height: 1.5;
+
+	&--primary {
+		font-size: 40px;
+	}
+
+	&--secondary {
+		font-size: 30px;
+	}
+
+	&--tertiary {
+		font-size: 22px;
+	}
+}
+
+.blockquote {
+	font-family: var(--bodyFont), serif;
+	border-left: 3px solid red;
+	padding: 5px 0 5px 10px;
+	max-width: 75%;
+	margin-left: 5px;
+	margin-bottom: 1rem;
+	line-height: 1.5;
+	font-style: italic;
+}
+
+.text {
+	font-family: var(--bodyFont), sans-serif;
+	line-height: 1.5;
+	margin-bottom: 1rem;
+	color: var(--baseTextColor);
+
+	&--small {
+		font-size: 0.75rem;
+	}
+}
+
+.link {
+	color: var(--baseTextColor);
+	border-bottom: 1px dotted var(--linkColor);
+	text-decoration: none;
+	transition: color 0.3s var(--transitionAnimation);
+
+	&:hover {
+		color: var(--linkColor);
+	}
+
+	&--external {	
+		padding-right: 5px;
+
+		&:after {
+			content: '';
+			display: inline-block;
+			width: 3px;
+			height: 3px;
+			background: var(--linkColor);
+		}
+	}
+}

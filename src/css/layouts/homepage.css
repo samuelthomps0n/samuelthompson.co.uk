@@ -1,0 +1,43 @@
+.page {
+
+	display: grid;
+	grid-template-columns: 100%;
+
+	@media (min-width: 768px) {
+		padding-left: 260px;
+		grid-template-columns: calc(100%);
+	}
+
+	@media (min-width: 1024px) {
+		grid-template-columns: 80%;
+	}
+
+	@media (min-width: 1200px) {
+		grid-template-columns: 70%;
+	}
+
+
+	&__header {
+		padding: 20px 20px 0;
+
+		@media (min-width: 768px) {
+			position: fixed;
+			left: 0;
+			padding: 30px;
+		}
+
+		.identity {
+			margin-bottom: 20px;
+			@media (min-width: 768px) {
+				margin-bottom: 30px;
+			}
+		}
+	}
+
+	&__content {
+		padding: 20px;
+		@media (min-width: 768px) {
+			padding: 30px;
+		}
+	}
+}
