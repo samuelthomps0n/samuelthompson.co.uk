@@ -2,7 +2,7 @@
   "name": "samuelthompson.react",
   "version": "0.1.0",
   "private": true,
-  "homepage" : "http://samuelthompson.co.uk/beta",
+  "homepage" : "http://beta.samuelthompson.co.uk",
   "dependencies": {
     "postcss": "^6.0.14",
     "postcss-cli": "^4.1.1",
