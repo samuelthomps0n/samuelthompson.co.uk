@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom';
 import Photo from './Photo/Photo';
 import Overlay from './Overlay/Overlay';
 import './App.css';
@@ -158,38 +159,74 @@ class App extends Component {
 
   render() {
     return (
-      <div className="">
+      <BrowserRouter>
+        <div>
 
-        <header className="page__header">
-          <h1 className="identity identity--split">Samuel Thompson</h1>
-          <nav className="menu">
-            <ul>
-              <li className="menu__item">
-                <a href="" className="menu__link menu__link--active" title="">Home</a>
-              </li>
-              <li className="menu__item">
-                <a href="" className="menu__link" title="">About</a>
-              </li>
-              <li className="menu__item">
-                <a href="" className="menu__link" title="">Contact</a>
-              </li>
-            </ul>
-          </nav>
-        </header>
+          <header className="page__header">
+            <h1 className="identity identity--split">Samuel Thompson</h1>
+            <nav className="menu">
+              <ul>
+                <li className="menu__item">
+                  <NavLink exact to='/' className="menu__link" activeClassName="menu__link--active">Home</NavLink>
+                </li>
+                <li className="menu__item">
+                  <NavLink to='/about' className="menu__link" activeClassName="menu__link--active">About</NavLink>
+                </li>
+                <li className="menu__item">
+                  <NavLink to='/contact' className="menu__link" activeClassName="menu__link--active">Contact</NavLink>
+                </li>
+              </ul>
+            </nav>
+          </header>
 
-        <main className="page__content">
-          <section className="grid">
-            {this.state.photos.map(function(photo, index) {
-              return <Photo local={photo.localUrl} hosted={photo.url} portrait={photo.portrait} index={index} handler={this.changeOverlay} />;
-            }, this)}
-          </section>
-        </main>
+          <Switch>
+            <Route exact path='/'>
+              <div>
+                <main className="page__content">
+                  <section className="grid">
+                    {this.state.photos.map(function(photo, index) {
+                      return <Photo local={photo.localUrl} hosted={photo.url} portrait={photo.portrait} index={index} handler={this.changeOverlay} />;
+                    }, this)}
+                  </section>
+                </main>
 
-        <section className={this.isOverlayVisible()}>
-          {this.state.overlayVisible && <Overlay image={this.state.active.imageUrl} portrait={this.state.active.portrait} visible={this.state.overlayVisible} handler={this.changeOverlay} />}
-        </section>
+                <section className={this.isOverlayVisible()}>
+                  {this.state.overlayVisible && <Overlay image={this.state.active.imageUrl} portrait={this.state.active.portrait} visible={this.state.overlayVisible} handler={this.changeOverlay} />}
+                </section>
+              </div>
+            </Route>
+            <Route path='/about'>
+              <main class="page__content">
+                <h1 class="heading heading--tertiary">About</h1>
+                <p class="text">Samuel Thompson is a landscape and lifestyle photographer living in Somerset, UK</p>
+                <p class="text">-</p>
 
-      </div>
+                <p class="text">Came here looking for a contract web developer? Lots of the work I undertake is for leading UK agencies and as such can't be displayed online. Feel free to email me on <a href="mailto:sam@samuelthompson.co.uk" title="Email me for a portfolio" class="link">sam@samuelthompson.co.uk</a> and I can send over a portfolio of work.</p>
+
+                <p class="text"><a href="https://github.com/samuelthomps0n" title="View my GitHub.com profile" class="link">- Github.com</a></p>
+                <p class="text"><a href="https://www.npmjs.com/~samuelthomps0n" title="View my NPMJS packages" class="link">- NPM</a></p>
+                <p class="text"><a href="http://linkedin.com/in/samuelthomps0n/" title="View my LinkedIn profile" class="link">- LinkedIn</a></p>
+
+                <p class="text"></p>
+
+                <p class="text text--small">&copy; Samuel Thompson Corporate Ltd. Registered in England & Wales 8053244 - Registered Office: Palladium House, 1-4 Argyll Street, London, W1F 7LD</p>
+              </main>
+            </Route>
+            <Route path="/contact">
+              <main class="page__content">
+                <h1 class="heading heading--tertiary">Contact</h1>
+                <p class="text">t. 01278 630 898</p>
+                <p class="text">m. 07853 242 138</p>
+                <p class="text">e. <a href="mailto:sam@samuelthompson.co.uk" title="Email me" class="link">sam@samuelthompson.co.uk</a></p>
+
+                <p class="text">-</p>
+
+                <p class="text text--small">&copy; Samuel Thompson Corporate Ltd. Registered in England & Wales 8053244 - Registered Office: Palladium House, 1-4 Argyll Street, London, W1F 7LD</p>
+              </main>
+            </Route>
+          </Switch> 
+        </div>
+      </BrowserRouter>
     );
   }
 }

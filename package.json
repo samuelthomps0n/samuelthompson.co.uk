@@ -2,7 +2,7 @@
   "name": "samuelthompson.react",
   "version": "0.1.0",
   "private": true,
-  "homepage" : "http://beta.samuelthompson.co.uk",
+  "homepage": "http://beta.samuelthompson.co.uk",
   "dependencies": {
     "postcss": "^6.0.14",
     "postcss-cli": "^4.1.1",
@@ -12,6 +12,7 @@
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-progressive-image-loading": "^3.0.3",
+    "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4",
     "reset-css": "^2.2.1"
   },

@@ -11,10 +11,7 @@ class Photo extends Component {
 		this.state = {
 			image: {
 				blur: cloudinaryUrl + "c_scale,e_blur:823,q_59,w_100/" + props.hosted,
-				small: cloudinaryUrl + "c_scale,q_60,w_500/" + props.hosted,
-				retina: "./photos/large/" + props.local,
-				fullsize: cloudinaryUrl + "c_scale,q_60,w_900/" + props.hosted,
-				fullsizeretina: cloudinaryUrl + "c_scale,q_60,w_1800/" + props.hosted
+				small: cloudinaryUrl + "c_scale,q_60,w_500/" + props.hosted
 			},
 			portrait: props.portrait,
 			handler: props.handler,
@@ -44,13 +41,7 @@ class Photo extends Component {
 
 	render() {
 	return (
-			<article 
-			className={this.gridImageClass()} 
-			data-small={this.state.image.small} 
-			data-retina={this.state.image.retina}
-			data-fullsize={this.state.image.fullsize}
-			data-fullsize-retina={this.state.image.fullsizeretina}
-			data-portrait={this.state.portrait}>
+			<article className={this.gridImageClass()}>
 				<div className="grid__image-container">
 					<a title="" className="grid__link" onClick={this.toggle}>
 						<ProgressiveImage

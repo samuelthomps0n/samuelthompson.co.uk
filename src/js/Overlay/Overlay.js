@@ -18,8 +18,6 @@ class Overlay extends Component {
 		};
 	}
 
-	
-
 	contentClass() {
 		let defaultClass = "image-overlay__content";
 
