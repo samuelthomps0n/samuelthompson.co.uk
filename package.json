@@ -2,7 +2,7 @@
   "name": "samuelthompson.react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://beta.samuelthompson.co.uk",
+  "homepage": "http://samuelthompson.co.uk",
   "dependencies": {
     "arrow-keys-react": "^1.0.6",
     "postcss": "^6.0.14",
