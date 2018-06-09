@@ -8,39 +8,60 @@ class Overlay extends Component {
 
 	constructor(props) {
 		super();
-
 		this.state = {
-			visible: false,
-			portrait: props.portrait,
 			handler: props.handler,
-			small: cloudinaryUrl + "c_scale,q_60,w_500/" + props.image,
-			image: cloudinaryUrl + "c_scale,q_60,w_1800/" + props.image
-		};
+			image: props.image,
+			imageLoading: true
+		}
+	}
+
+	componentWillReceiveProps(nextProps) {
+		this.setState(nextProps);
+		this.setState({
+			imageLoading: true
+		});
 	}
 
 	contentClass() {
 		let defaultClass = "image-overlay__content";
 
-		if(this.state.portrait) {
+		if(this.state.image.portrait) {
 			return defaultClass + " image-overlay__content--portrait";
 		}
 		return defaultClass + " image-overlay__content--landscape";
+	}
+
+	handleImageLoaded() {
+		this.setState({
+			imageLoading: false
+		});
 	}
 
 	toggle = () => {
 		this.state.handler(0);
 	}
 
+	scaleFromCloundinary(width, url) {
+		return cloudinaryUrl + "c_scale,q_60,w_" + width + "/" + url;
+	}
+
+	imageHasLoaded() {
+		if(!this.state.imageLoading) {
+			return 'loaded';
+		}
+		return 'loading';
+	}
+
 	render() {
+		const loading = this.state.imageLoading;
+
 		return (
 			<section className="image-overlay__container">
 				<span className="image-overlay__close" onClick={this.toggle}>[x]</span>
 				<div className={this.contentClass()}>
-					<ProgressiveImage
-						preview={this.state.small}
-						src={this.state.image}
-						render={(src, style) => <img src={src} style={style} className="image-overlay__image" />}
-					/>
+
+					<img src={this.scaleFromCloundinary(1800, this.state.image.url)} onLoad={this.handleImageLoaded.bind(this)} className={this.imageHasLoaded()} />
+					
 					<p className="image-overlay__caption"></p>
 				</div>
 			</section>

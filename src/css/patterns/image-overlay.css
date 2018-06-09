@@ -49,6 +49,11 @@
 				max-height: 95%;
 				height: 95%;
 				width: auto;
+				opacity: 0;
+
+				&.loaded {
+					opacity: 1;
+				}
 			}
 		}
 
@@ -59,6 +64,11 @@
 			img {
 				width: 100%;
 				height: auto;
+				opacity: 0;
+
+				&.loaded {
+					opacity: 1;
+				}
 			}
 		}
 	}

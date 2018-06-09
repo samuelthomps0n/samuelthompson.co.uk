@@ -115,6 +115,9 @@ table {
 .identity--split {
 		max-width: 6ch;
 	}
+.no-focus {
+	outline: none;
+}
 .menu {
 	font-family: 'PT Sans', serif;
 }
@@ -264,7 +267,11 @@ table {
 				max-height: 95%;
 				height: 95%;
 				width: auto;
+				opacity: 0;
 			}
+.image-overlay__content--portrait img.loaded {
+					opacity: 1;
+				}
 .image-overlay__content--landscape {
 			width: 80%;
 			max-width: 900px;
@@ -272,7 +279,11 @@ table {
 .image-overlay__content--landscape img {
 				width: 100%;
 				height: auto;
+				opacity: 0;
 			}
+.image-overlay__content--landscape img.loaded {
+					opacity: 1;
+				}
 .image-overlay__image {
 		display: block;
 	}

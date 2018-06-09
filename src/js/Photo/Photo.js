@@ -20,7 +20,7 @@ class Photo extends Component {
 	}
 
 	gridImageClass() {
-		let defaultClasses = "grid__image i-image-thumbnail";
+		let defaultClasses = "grid__image";
 
 		if(this.state.portrait) {
 			return defaultClasses + " grid__image--portrait";
@@ -40,19 +40,19 @@ class Photo extends Component {
 	}
 
 	render() {
-	return (
-			<article className={this.gridImageClass()}>
-				<div className="grid__image-container">
-					<a title="" className="grid__link" onClick={this.toggle}>
-						<ProgressiveImage
-								preview={this.state.image.blur}
-								src={this.state.image.small}
-								render={(src, style) => <img src={src} style={style} className={this.imageClass()} />}
-						/>
-					</a>
-				</div>
-			</article>
-	);
+		return (
+				<article className={this.gridImageClass()}>
+					<div className="grid__image-container">
+						<a title="" className="grid__link" onClick={this.toggle}>
+							<ProgressiveImage
+									preview={this.state.image.blur}
+									src={this.state.image.small}
+									render={(src, style) => <img src={src} style={style} className={this.imageClass()} />}
+							/>
+						</a>
+					</div>
+				</article>
+		);
 	}
 }
 

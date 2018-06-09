@@ -14,3 +14,7 @@
 		max-width: 6ch;
 	}
 }
+
+.no-focus {
+	outline: none;
+}
